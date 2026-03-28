@@ -47,18 +47,11 @@ carros = {
     "despedida": "Até mais! Boa sorte na escolha do carro!"
 }
 
-print("Chatbot de recomendação de carros (digite 'sair' para encerrar)\n")
-
-while True:
-    entrada = input("Você: ")
-
-    if entrada.lower() == "sair":
-        break
-
-    entrada_proc = preprocess(entrada)
+def responder(texto):
+    entrada_proc = preprocess(texto)
     entrada_vector = vectorizer.transform([entrada_proc])
     intencao_prevista = modelo.predict(entrada_vector)[0]
 
-    resposta = carros.get(
-        intencao_prevista, "Não entendi, pode explicar melhor?")
-    print("Bot:", resposta)
+    return carros.get(
+        intencao_prevista, "Não entendi, pode explicar melhor?"
+    )
