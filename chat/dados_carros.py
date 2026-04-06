@@ -193,7 +193,6 @@ DADOS_CARROS = {
     "jimny": {"consumo":"medio", "cambio":"manual", "potencia":"media", "tipo":"suv", "marca":"suzuki", "ano":"2023"},
     "baleno": {"consumo":"medio", "cambio":"automatico", "potencia":"media", "tipo":"hatch", "marca":"suzuki", "ano":"2023"},
     "ertiga": {"consumo":"medio", "cambio":"manual", "potencia":"media", "tipo":"minivan", "marca":"suzuki", "ano":"2023"},
-    "alto": {"consumo":"alto", "cambio":"manual", "potencia":"baixa", "tipo":"hatch", "marca":"suzuki", "ano":"2023"},
     "sx4": {"consumo":"medio", "cambio":"automatico", "potencia":"media", "tipo":"suv", "marca":"suzuki", "ano":"2023"},
     "grand vitara": {"consumo":"medio", "cambio":"automatico", "potencia":"media", "tipo":"suv", "marca":"suzuki", "ano":"2023"},
     "ignis": {"consumo":"medio", "cambio":"automatico", "potencia":"media", "tipo":"hatch", "marca":"suzuki", "ano":"2023"},

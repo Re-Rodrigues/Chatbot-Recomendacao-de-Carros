@@ -23,7 +23,7 @@ def obter_carros_por_tipo(tipo):
     return [carro for carro, dados in DADOS_CARROS.items() if dados["tipo"] == tipo]
 
 FRAMES = [
-    "oi", "ola", "bom dia", "tudo bem", "como vai", "e ai", "opa",
+    "oi", "ola", "bom dia", "tudo bem", "como vai", "e ai", "opa", "salve", "fala",
     "quero um carro barato", "tem carro barato", "carro em conta",
     "quero um suv", "carro alto",
     "quero um sedan", "tem sedan", "sedan", "seda",
@@ -38,7 +38,7 @@ FRAMES = [
 ]
 
 INTENCOES = [
-    "saudacao","saudacao","saudacao","saudacao","saudacao","saudacao","saudacao",
+    "saudacao","saudacao","saudacao","saudacao","saudacao","saudacao","saudacao","saudacao","saudacao",
     "preco","preco","preco",
     "tipo_suv","tipo_suv",
     "tipo_sedan","tipo_sedan","tipo_sedan","tipo_sedan",
@@ -111,8 +111,8 @@ modelo = MultinomialNB()
 modelo.fit(X, INTENCOES)
 
 def gancho():
-    return random.choice([
-        "Não gostou das opções? Se quiser posso te mostrar outros modelos, só dizer o que procura.",
+    return "\n\n" + random.choice([
+        "O que achou das opções? Se quiser posso te mostrar outros modelos, só dizer o que procura.",
         "O que achou desses? Se quiser posso te mostrar outros modelos, só dizer o que está procurando.",
         "Gostou de algum? Se quiser posso te mostrar as especificações de algum deles, só dizer o modelo que gostou."
     ])
@@ -171,22 +171,21 @@ def detectar_intencao(texto):
     if texto == "nada com nada":
         return "nao_entendi"
 
-    if any(word in texto for word in ["tchau", "adeus", "ate logo", "flw", "falou"]):
+    if any(word in texto for word in ["tchau", "adeus", "ate logo", "flw", "falou", "xau", "xau xau", "vlw", "valeu", "brigado", "brigad", "brigada", "obrigado", "obrigada", "obrigad"]):
         return "despedida"
-
-    if any(word in texto for word in ["sedan", "seda"]):
+    if any(word in texto for word in ["sedan", "seda", "sedans", "sedas"]) and not any(word in texto for word in ["hatch", "hatchback", "suv", "utilitario", "pickup", "minivan", "eletrico"]):
         return "tipo_sedan"
-    if "hatch" in texto:
+    if any(word in texto for word in ["hatch", "hatchback", "hatchbacks"]) and not any(word in texto for word in ["sedan", "seda", "sedans", "sedas", "suv", "utilitario", "pickup", "minivan", "eletrico"]):
         return "tipo_hatch"
-    if "suv" in texto:
+    if any(word in texto for word in ["suv", "suvs", "grande", "grandes", "alto", "altos"]) and not any(word in texto for word in ["sedan", "seda", "sedans", "sedas", "hatch", "hatchback", "utilitario", "pickup", "minivan", "eletrico"]):
         return "tipo_suv"
-    if "barato" in texto:
+    if any(word in texto for word in ["barato", "baratos", "preço baixo", "preco baixo", "em conta", "acessivel", "acessível", "baixo preço", "baixo preco"]):
         return "preco"
-    if "economico" in texto:
+    if any(word in texto for word in ["economico", "economia", "baixo consumo", "bebe pouco", "consome pouco", "consumo baixo"]):
         return "economia"
-    if "potente" in texto:
+    if any(word in texto for word in ["potente", "potencia", "potente", "potencia alta", "muito potente", "muita potencia", "forte", "fortes"]):
         return "potencia"
-    if "completo" in texto:
+    if any(word in texto for word in ["completo", "completos"]):
         return "completo"
     if any(word in texto for word in ["quem", "oque", "sobre"]) and "voce" in texto:
         return "sobre"
