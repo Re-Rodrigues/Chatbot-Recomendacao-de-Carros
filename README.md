@@ -1,4 +1,4 @@
-# 📚 Chatbot-Recomendacao-de-Carros
+# 📚 Chatbot de Recomendação de Carros
 
 Projeto desenvolvido para a disciplina de **Inteligência Artificial e Machine Learning**
 
