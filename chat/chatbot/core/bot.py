@@ -1,16 +1,16 @@
 import random
 
-from chatbot.core.contexto import Contexto
-from chatbot.data.carros import DADOS_CARROS
-from chatbot.data.respostas import RESPOSTAS
-from chatbot.nlp.preprocess import normalizar
-from chatbot.nlp.intent_model import detectar_intencao
-from chatbot.services.carro_service import (
+from .contexto import Contexto
+from ..data import DADOS_CARROS
+from ..data.respostas import RESPOSTAS
+from ..nlp.preprocess import normalizar
+from ..nlp.intent_model import detectar_intencao
+from ..services.carro_service import (
     responder_marca,
     responder_carro,
     pedir_outros,
     frase_recomendacao,
-    gancho,
+    gancho
 )
 
 contexto = Contexto()

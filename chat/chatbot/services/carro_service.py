@@ -1,6 +1,6 @@
 import random
-from chatbot.data.carros import DADOS_CARROS
-from chatbot.data.respostas import RESPOSTAS
+from ..data import DADOS_CARROS
+from ..data.respostas import RESPOSTAS
 
 MARCAS = sorted(set(dados["marca"] for dados in DADOS_CARROS.values()))
 

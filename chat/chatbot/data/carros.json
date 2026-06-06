@@ -1,0 +1,2045 @@
+[
+  {
+    "nome": "kwid",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "sandero",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "renault",
+    "ano": 2022
+  },
+  {
+    "nome": "clio",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "renault",
+    "ano": 2022
+  },
+  {
+    "nome": "twingo",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "dacia duster",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "logan",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "renault",
+    "ano": 2022
+  },
+  {
+    "nome": "laguna",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "duster",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "captur",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "renault",
+    "ano": 2022
+  },
+  {
+    "nome": "scenic",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "koleos",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "grand scenic",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "kangoo",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "utilitario",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "master",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "alta",
+    "tipo": "utilitario",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "express",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "utilitario",
+    "marca": "renault",
+    "ano": 2023
+  },
+  {
+    "nome": "mobi",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "argo",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "uno",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "palio",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "fiat",
+    "ano": 2022
+  },
+  {
+    "nome": "idea",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "fiat",
+    "ano": 2021
+  },
+  {
+    "nome": "500",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "cronos",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "linea",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "siena",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "pulse",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "fastback",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "doblo",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "utilitario",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "toro",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "pickup",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "strada",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "pickup",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "ducato",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "alta",
+    "tipo": "utilitario",
+    "marca": "fiat",
+    "ano": 2023
+  },
+  {
+    "nome": "celta",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "cobalt",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "cruze",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "chevrolet",
+    "ano": 2022
+  },
+  {
+    "nome": "malibu",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "spin",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "tracker",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "captiva",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "equinox",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "trailblazer",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "s10",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "montana",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "pickup",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "silverado",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "bolt",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "eletrico",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "tabok",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "pickup",
+    "marca": "chevrolet",
+    "ano": 2023
+  },
+  {
+    "nome": "hb20",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "i20",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "i30",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "elantra",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "xcent",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "venue",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "bayon",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "creta",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "kona",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "tucson",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "santa fe",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "ix35",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2022
+  },
+  {
+    "nome": "ioniq",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "veloster",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "hatch",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "h-350",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "utilitario",
+    "marca": "hyundai",
+    "ano": 2023
+  },
+  {
+    "nome": "gol",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "volkswagen",
+    "ano": 2022
+  },
+  {
+    "nome": "polo",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "fox",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "volkswagen",
+    "ano": 2021
+  },
+  {
+    "nome": "up",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "virtus",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "jetta",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "passat",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "golf",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "t cross",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "taos",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "tiguan",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "teramont",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "saveiro",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "pickup",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "amarok",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "novo gol",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "volkswagen",
+    "ano": 2023
+  },
+  {
+    "nome": "208",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "206",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "peugeot",
+    "ano": 2022
+  },
+  {
+    "nome": "301",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "308",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "307",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "peugeot",
+    "ano": 2022
+  },
+  {
+    "nome": "2008",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "3008",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "5008",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "rcz",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "coupe",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "407",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "peugeot",
+    "ano": 2022
+  },
+  {
+    "nome": "406",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "peugeot",
+    "ano": 2022
+  },
+  {
+    "nome": "607",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "peugeot",
+    "ano": 2022
+  },
+  {
+    "nome": "rifter",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "traveller",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "partner",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "utilitario",
+    "marca": "peugeot",
+    "ano": 2023
+  },
+  {
+    "nome": "fiesta",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "ford",
+    "ano": 2022
+  },
+  {
+    "nome": "ka",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "ford",
+    "ano": 2022
+  },
+  {
+    "nome": "novo ka",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "focus",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "fusion",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "ford",
+    "ano": 2022
+  },
+  {
+    "nome": "mondeo",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "ecosport",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "edge",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "escape",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "territory",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "puma",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "ranger",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "f-150",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "mustang",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "coupe",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "transit",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "utilitario",
+    "marca": "ford",
+    "ano": 2023
+  },
+  {
+    "nome": "etios",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "toyota",
+    "ano": 2021
+  },
+  {
+    "nome": "yaris",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "vitz",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "corolla",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "yaris sedan",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "camry",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "prius",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hibrido",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "aqua",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hibrido",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "c-hr",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "rav4",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "fortuner",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "sw4",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "hilux",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "innova",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "land cruiser",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "toyota",
+    "ano": 2023
+  },
+  {
+    "nome": "civic",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "city",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "accord",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "jazz",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "fit",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "insight",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "hr-v",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "cr-v",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "vezel",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "pilot",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "odyssey",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "freed",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "stream",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "honda",
+    "ano": 2022
+  },
+  {
+    "nome": "ridgeline",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "e:ny1",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "eletrico",
+    "marca": "honda",
+    "ano": 2023
+  },
+  {
+    "nome": "versa",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "march",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "sentra",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "altima",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "livina",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "note",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "kicks",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "qashqai",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "x-trail",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "rogue",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "murano",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "pathfinder",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "leaf",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "eletrico",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "titan",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "frontier",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "nissan",
+    "ano": 2023
+  },
+  {
+    "nome": "renegade",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "compass",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "wrangler",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "cherokee",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "grand cherokee",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "gladiator",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "pickup",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "patriot",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2022
+  },
+  {
+    "nome": "liberty",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2022
+  },
+  {
+    "nome": "commander",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2022
+  },
+  {
+    "nome": "liberty sport",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "cherokee sport",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "laredo",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "sahara",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "rubicon",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "high altitude",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2023
+  },
+  {
+    "nome": "vitara",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "swift",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "s-cross",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "jimny",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "baleno",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "ertiga",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "sx4",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "grand vitara",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "ignis",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "celerio",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "wagon-r",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "a-star",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "ciaz",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "xl-7",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "suzuki",
+    "ano": 2023
+  },
+  {
+    "nome": "nivus",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "volkswagen",
+    "ano": 2024
+  },
+  {
+    "nome": "taos",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "volkswagen",
+    "ano": 2024
+  },
+  {
+    "nome": "virtus",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "volkswagen",
+    "ano": 2024
+  },
+  {
+    "nome": "city",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "honda",
+    "ano": 2024
+  },
+  {
+    "nome": "city_hatch",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "honda",
+    "ano": 2024
+  },
+  {
+    "nome": "zrv",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "honda",
+    "ano": 2024
+  },
+  {
+    "nome": "crv",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "honda",
+    "ano": 2024
+  },
+  {
+    "nome": "corolla_cross_hybrid",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "toyota",
+    "ano": 2024
+  },
+  {
+    "nome": "hilux",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "picape",
+    "marca": "toyota",
+    "ano": 2024
+  },
+  {
+    "nome": "ranger",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "picape",
+    "marca": "ford",
+    "ano": 2024
+  },
+  {
+    "nome": "maverick",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "picape",
+    "marca": "ford",
+    "ano": 2024
+  },
+  {
+    "nome": "territory",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "ford",
+    "ano": 2024
+  },
+  {
+    "nome": "fastback",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "fiat",
+    "ano": 2024
+  },
+  {
+    "nome": "pulse",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "fiat",
+    "ano": 2024
+  },
+  {
+    "nome": "toro",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "picape",
+    "marca": "fiat",
+    "ano": 2024
+  },
+  {
+    "nome": "ram_1500",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "picape",
+    "marca": "ram",
+    "ano": 2024
+  },
+  {
+    "nome": "rampage",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "picape",
+    "marca": "ram",
+    "ano": 2024
+  },
+  {
+    "nome": "tracker",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "chevrolet",
+    "ano": 2024
+  },
+  {
+    "nome": "montana",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "picape",
+    "marca": "chevrolet",
+    "ano": 2024
+  },
+  {
+    "nome": "spin",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "minivan",
+    "marca": "chevrolet",
+    "ano": 2024
+  },
+  {
+    "nome": "creta_n_line",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2024
+  },
+  {
+    "nome": "kona",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "hyundai",
+    "ano": 2024
+  },
+  {
+    "nome": "eclipse_cross",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "mitsubishi",
+    "ano": 2024
+  },
+  {
+    "nome": "outlander",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "mitsubishi",
+    "ano": 2024
+  },
+  {
+    "nome": "compass_blackhawk",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "jeep",
+    "ano": 2024
+  },
+  {
+    "nome": "seal",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "byd",
+    "ano": 2025
+  },
+  {
+    "nome": "song_plus",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "byd",
+    "ano": 2025
+  },
+  {
+    "nome": "dolphin_mini",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "byd",
+    "ano": 2025
+  },
+  {
+    "nome": "ora_03",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "gwm",
+    "ano": 2025
+  },
+  {
+    "nome": "kicks_play",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "nissan",
+    "ano": 2024
+  },
+  {
+    "nome": "hrv_touring",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "honda",
+    "ano": 2024
+  },
+  {
+    "nome": "onix",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "hatch",
+    "marca": "chevrolet",
+    "ano": 2024
+  },
+  {
+    "nome": "onix_plus",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "chevrolet",
+    "ano": 2024
+  },
+  {
+    "nome": "c4",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "citroen",
+    "ano": 2024
+  },
+  {
+    "nome": "c3",
+    "consumo": "alto",
+    "cambio": "manual",
+    "potencia": "baixa",
+    "tipo": "hatch",
+    "marca": "citroen",
+    "ano": 2024
+  },
+  {
+    "nome": "basalt",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "citroen",
+    "ano": 2025
+  },
+  {
+    "nome": "oroch",
+    "consumo": "medio",
+    "cambio": "manual",
+    "potencia": "media",
+    "tipo": "picape",
+    "marca": "renault",
+    "ano": 2024
+  },
+  {
+    "nome": "asx",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "mitsubishi",
+    "ano": 2023
+  },
+  {
+    "nome": "l200_triton",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "picape",
+    "marca": "mitsubishi",
+    "ano": 2024
+  },
+  {
+    "nome": "pajero_sport",
+    "consumo": "baixo",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "mitsubishi",
+    "ano": 2024
+  },
+  {
+    "nome": "azera",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "sedan",
+    "marca": "hyundai",
+    "ano": 2020
+  },
+  {
+    "nome": "sportage",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "kia",
+    "ano": 2024
+  },
+  {
+    "nome": "cerato",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "sedan",
+    "marca": "kia",
+    "ano": 2024
+  },
+  {
+    "nome": "seltos",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "kia",
+    "ano": 2024
+  },
+  {
+    "nome": "tiggo_5x",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "media",
+    "tipo": "suv",
+    "marca": "caoa_chery",
+    "ano": 2024
+  },
+  {
+    "nome": "tiggo_7",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "caoa_chery",
+    "ano": 2024
+  },
+  {
+    "nome": "tiggo_8",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "caoa_chery",
+    "ano": 2024
+  },
+  {
+    "nome": "haval_h6",
+    "consumo": "alto",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "gwm",
+    "ano": 2025
+  },
+  {
+    "nome": "tank_300",
+    "consumo": "medio",
+    "cambio": "automatico",
+    "potencia": "alta",
+    "tipo": "suv",
+    "marca": "gwm",
+    "ano": 2025
+  }
+]
