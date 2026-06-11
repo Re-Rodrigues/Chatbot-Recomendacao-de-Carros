@@ -12,6 +12,7 @@ from ..services.carro_service import (
     frase_recomendacao,
     gancho
 )
+from ..services.carfit_service import buscar_no_carfit, formatar_resposta_carfit
 
 contexto = Contexto()
 
@@ -58,6 +59,11 @@ def responder(texto):
 
     if intencao not in ["despedida", "saudacao", "nao_entendi", "sobre", "opcoes", "agradecimento"]:
         resp += " " + gancho()
+
+    if intencao == "nao_entendi":
+        carros_carfit = buscar_no_carfit(texto)
+        if carros_carfit:
+            return formatar_resposta_carfit(carros_carfit)
 
     return resp
 
