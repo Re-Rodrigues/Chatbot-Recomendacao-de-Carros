@@ -7,6 +7,7 @@ FRAMES = [
     "carro economico", "baixo consumo", "bebe pouco",
     "carro potente",
     "carro completo",
+    "carro eletrico", "carros eletricos", "eletrico", "eletrica", "eletricos", "eletricas", "hibrido", "hibrida", "hibridos", "hibridas",
     "quem e voce", "o que voce e", "sobre voce", "quem voce e",
     "o que voce tem", "o que voce pode recomendar", "o que voce oferece", "quais opcoes", "me ajude", "outros modelos",
     "obrigado", "obrigada", "muito obrigado", "muito obrigada", "valeu", "brigado", "brigad",
@@ -22,6 +23,7 @@ INTENCOES = [
     "economia","economia","economia",
     "potencia",
     "completo",
+    "tipo_eletrico","tipo_eletrico","tipo_eletrico","tipo_eletrico","tipo_eletrico","tipo_eletrico","tipo_eletrico","tipo_eletrico","tipo_eletrico","tipo_eletrico",
     "sobre","sobre","sobre","sobre",
     "opcoes","opcoes","opcoes","opcoes","opcoes","opcoes",
     "agradecimento","agradecimento","agradecimento","agradecimento","agradecimento","agradecimento","agradecimento",
@@ -35,5 +37,6 @@ LABELS = {
     "tipo_hatch": "hatches",
     "economia": "econômicos",
     "potencia": "potentes",
-    "completo": "completos"
+    "completo": "completos",
+    "tipo_eletrico": "elétricos"
 }

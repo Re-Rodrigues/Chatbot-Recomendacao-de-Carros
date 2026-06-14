@@ -17,6 +17,8 @@ def detectar_intencao(texto):
 
     if any(word in texto for word in ["tchau", "adeus", "ate logo", "flw", "falou", "xau", "xau xau", "vlw", "valeu", "brigado", "brigad", "brigada", "obrigado", "obrigada", "obrigad"]):
         return "despedida"
+    if any(word in texto for word in ["eletrico", "eletricos", "eletrica", "eletricas", "hibrido", "hibridos", "hibrida", "hibridas"]):
+        return "tipo_eletrico"
     if any(word in texto for word in ["sedan", "seda", "sedans", "sedas"]) and not any(word in texto for word in ["hatch", "hatchback", "suv", "utilitario", "pickup", "minivan", "eletrico"]):
         return "tipo_sedan"
     if any(word in texto for word in ["hatch", "hatchback", "hatchbacks"]) and not any(word in texto for word in ["sedan", "seda", "sedans", "sedas", "suv", "utilitario", "pickup", "minivan", "eletrico"]):

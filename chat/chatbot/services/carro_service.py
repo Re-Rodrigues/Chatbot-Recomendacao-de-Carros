@@ -98,9 +98,24 @@ def gancho_carro():
 
 
 def pedir_outros(texto):
-    if any(term in texto for term in ["outros tipos", "outro tipo", "outros tipo", "outros tipos de carro", "outros tipos de"]):
+    low = texto.lower()
+    # Expressões que explicitamente pedem por mais opções
+    more_terms = ["mais opções", "mais opcoes", "mostrar mais", "mostra mais", "veja mais", "mais modelos", "mais"]
+    for term in more_terms:
+        if term in low:
+            # evitar falsos positivos com apenas 'mais' isolado when it's ambiguous
+            if term == "mais":
+                # se apenas 'mais' aparecer, só considerar se também houver 'opções' ou 'modelos' próximo
+                if "opções" in low or "opcoes" in low or "modelos" in low:
+                    return True
+                continue
+            return True
+
+    # Expressões que explicitly say 'other' but some patterns indicate not a request for more
+    if any(term in low for term in ["outros tipos", "outro tipo", "outros tipo", "outros tipos de carro", "outros tipos de"]):
         return False
-    return "outros" in texto or "outro" in texto
+
+    return "outros" in low or "outro" in low
 
 
 def frase_recomendacao(intencao, carros_info):

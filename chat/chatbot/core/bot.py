@@ -12,7 +12,12 @@ from ..services.carro_service import (
     frase_recomendacao,
     gancho
 )
-from ..services.carfit_service import buscar_no_carfit, formatar_resposta_carfit
+from ..services.carfit_service import (
+    buscar_no_carfit,
+    formatar_resposta_carfit,
+    formatar_detalhes_carro_carfit,
+)
+from ..services.llm_service import gerar_resposta_llm
 
 contexto = Contexto()
 
@@ -20,16 +25,37 @@ contexto = Contexto()
 def responder(texto):
     texto = normalizar(texto)
 
-    resposta_marca = responder_marca(texto, contexto)
-    if resposta_marca:
-        return resposta_marca
-
     resposta_carro = responder_carro(texto, contexto)
     if resposta_carro:
         return resposta_carro
 
+    # Se não foi encontrado localmente por modelo, verificar se o usuário mencionou
+    # um modelo que existe no dataset CarFit e retornar detalhes somente nesse caso.
+    carros_carfit_match = buscar_no_carfit(texto)
+    if carros_carfit_match:
+        texto_lower = texto.lower()
+        for carro in carros_carfit_match:
+            modelo = (carro.get("model") or "").lower()
+            marca = (carro.get("make") or "").lower()
+
+            # Priorizar correspondência por modelo: verificar se alguma palavra do modelo
+            # aparece no texto do usuário (ex: 'sorento' em 'kia sorento').
+            # Evitar tokens genéricos de sufixo que causam falsos positivos (ex: "base", "plus").
+            STOP_MODEL_TOKENS = {"base", "limited", "plus", "urban", "sport", "edition", "premium", "lx", "ex", "se", "gt"}
+            modelo_tokens = [t for t in modelo.split() if len(t) >= 3 and t not in STOP_MODEL_TOKENS]
+            if modelo_tokens and any(token in texto_lower for token in modelo_tokens):
+                return formatar_detalhes_carro_carfit(carro)
+
+            # Também verificar a frase completa 'marca modelo' no texto.
+            if marca and modelo and f"{marca} {modelo}" in texto_lower:
+                return formatar_detalhes_carro_carfit(carro)
+
+    resposta_marca = responder_marca(texto, contexto)
+    if resposta_marca:
+        return resposta_marca
+
     if pedir_outros(texto) and contexto.ultima_intencao in [
-        "preco", "tipo_suv", "tipo_sedan", "tipo_hatch", "economia", "potencia", "completo"
+        "preco", "tipo_suv", "tipo_sedan", "tipo_hatch", "economia", "potencia", "completo", "tipo_eletrico"
     ]:
         intencao = contexto.ultima_intencao
     else:
@@ -37,6 +63,37 @@ def responder(texto):
 
     if intencao != contexto.ultima_intencao:
         contexto.reset(intencao)
+
+    if intencao == "tipo_eletrico":
+        # Se o usuário pediu "outros" e já temos estado de paginação, usar offset
+        # Use stored CarFit query when user asks for more options
+        if pedir_outros(texto) and contexto.ultima_intencao == "tipo_eletrico":
+            offset = contexto.carfit_offset
+            exclude = contexto.carfit_previous_ids
+            query = contexto.carfit_query or texto
+        else:
+            offset = 0
+            exclude = []
+            query = texto
+
+        # persist the current CarFit query for subsequent 'mais' requests
+        if offset == 0:
+            contexto.carfit_query = query
+
+        carros_carfit = buscar_no_carfit(query, offset=offset, exclude_ids=exclude)
+        if carros_carfit:
+            # atualizar contexto de paginação
+            for c in carros_carfit:
+                cid = c.get("car_id")
+                if cid and cid not in contexto.carfit_previous_ids:
+                    contexto.carfit_previous_ids.append(cid)
+            contexto.carfit_offset += len(carros_carfit)
+            return formatar_resposta_carfit(carros_carfit)
+
+        # fallback para LLM se não houver resultados
+        resposta_llm = gerar_resposta_llm(texto)
+        if resposta_llm:
+            return f"{resposta_llm}\n\n(uma API foi usada nesta pesquisa)"
 
     resp, carros_pool = RESPOSTAS.get(intencao, ("Não entendi.", []))
     if carros_pool:
@@ -47,23 +104,46 @@ def responder(texto):
             pool = carros_pool
 
         selected = random.sample(pool, min(3, len(pool)))
-        carros_info = ", ".join(
-            f"{c.upper()} ({DADOS_CARROS[c]['marca']})"
+        
+        # Formatar com títulos e lista de carros
+        titulos = {
+            "preco": "Carros bons e baratos",
+            "economia": "Carros econômicos",
+            "potencia": "Carros com potência",
+            "tipo_suv": "SUVs recomendados",
+            "tipo_sedan": "Sedans recomendados",
+            "tipo_hatch": "Hatches recomendados",
+            "completo": "Carros completos",
+            "tipo_eletrico": "Carros elétricos",
+        }
+        
+        titulo = titulos.get(intencao, "Carros recomendados")
+        
+        # Formatar lista de carros com travessão
+        lista_carros = "\n".join(
+            f"-{c.upper()} ({DADOS_CARROS[c]['marca']})"
             for c in selected
         )
-        resp = frase_recomendacao(intencao, carros_info)
+        
+        resp = f"{titulo}:\n\n{lista_carros}\n\nGostou desses carros?"
+        
         contexto.carros = selected
         contexto.previous_carros = selected
     else:
         contexto.carros = []
 
-    if intencao not in ["despedida", "saudacao", "nao_entendi", "sobre", "opcoes", "agradecimento"]:
+    if intencao not in ["despedida", "saudacao", "nao_entendi", "sobre", "opcoes", "agradecimento", "preco", "tipo_suv", "tipo_sedan", "tipo_hatch", "economia", "potencia", "completo", "tipo_eletrico"]:
         resp += " " + gancho()
 
     if intencao == "nao_entendi":
         carros_carfit = buscar_no_carfit(texto)
         if carros_carfit:
             return formatar_resposta_carfit(carros_carfit)
+
+        resposta_llm = gerar_resposta_llm(texto)
+        if resposta_llm:
+            return f"{resposta_llm}\n\n(uma API foi usada nesta pesquisa)"
+        return resp
 
     return resp
 

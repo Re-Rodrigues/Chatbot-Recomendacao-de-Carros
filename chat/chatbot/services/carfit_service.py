@@ -1,6 +1,8 @@
 import os
 import requests
 import logging
+import re
+import unicodedata
 
 logger = logging.getLogger(__name__)
 
@@ -17,6 +19,25 @@ MAX_RESULTADOS  = 5
 FETCH_LIMIT     = 100
 REQUEST_TIMEOUT = 15
 
+SEARCH_SYNONYMS = {
+    "eletrico": "electric",
+    "eletricos": "electric",
+    "eletrica": "electric",
+    "eletricas": "electric",
+    "hibrido": "hybrid",
+    "hibrida": "hybrid",
+    "hibridos": "hybrid",
+    "hibridas": "hybrid",
+    "gasolina": "gas",
+    "diesel": "diesel",
+    "flex": "flex",
+    "autonomo": "autonomy",
+}
+
+
+def _remover_acentos(texto: str) -> str:
+    return unicodedata.normalize("NFKD", texto).encode("ASCII", "ignore").decode("ASCII")
+
 
 def _build_headers() -> dict:
     headers = {"Accept": "application/json"}
@@ -32,23 +53,37 @@ def _extrair_palavras_chave(texto: str) -> list:
         "qual", "quais", "como", "onde", "por", "mais", "menos", "carro",
         "carros", "veiculo", "veiculos", "seria", "favor",
     }
-    tokens = texto.lower().split()
-    return [t for t in tokens if len(t) >= 3 and t not in stop_words]
+    texto_normalizado = _remover_acentos(texto.lower())
+    tokens = re.findall(r"\w+", texto_normalizado)
+    palavras = []
+    for t in tokens:
+        if len(t) < 3 or t in stop_words:
+            continue
+        if t in {"eletrico", "eletrica", "eletricos", "eletricas", "electric"}:
+            palavras.extend(["electric", "hybrid"])
+        elif t in {"hibrido", "hibrida", "hibridos", "hibridas"}:
+            palavras.append("hybrid")
+        else:
+            palavras.append(SEARCH_SYNONYMS.get(t, t))
+    return palavras
 
 
 def _carro_bate_filtros(carro: dict, palavras_chave: list) -> bool:
     valores = " ".join(str(v).lower() for v in carro.values() if v)
-    return any(palavra in valores for palavra in palavras_chave)
+    valores_normalizados = _remover_acentos(valores)
+    return any(palavra in valores_normalizados for palavra in palavras_chave)
 
 
-def buscar_no_carfit(pergunta: str) -> list:
+def buscar_no_carfit(pergunta: str, offset: int = 0, exclude_ids: list | None = None) -> list:
     palavras_chave = _extrair_palavras_chave(pergunta)
+    if exclude_ids is None:
+        exclude_ids = []
 
     if not palavras_chave:
         logger.info("[CarFitAI] Nenhuma palavra-chave extraída da pergunta.")
         return []
 
-    params  = {"offset": 0, "length": FETCH_LIMIT}
+    params  = {"offset": offset, "length": FETCH_LIMIT}
     headers = _build_headers()
 
     try:
@@ -82,7 +117,13 @@ def buscar_no_carfit(pergunta: str) -> list:
     carros_filtrados = []
     for row in rows:
         carro = row.get("row", {})
+        car_id = row.get("id") or carro.get("car_id")
+        if car_id and car_id in exclude_ids:
+            continue
         if _carro_bate_filtros(carro, palavras_chave):
+            # anexe o id internamente para controle de paginação
+            if car_id:
+                carro["car_id"] = car_id
             carros_filtrados.append(carro)
         if len(carros_filtrados) >= MAX_RESULTADOS:
             break
@@ -99,51 +140,85 @@ def formatar_resposta_carfit(carros: list) -> str:
     if not carros:
         return "Não encontrei carros correspondentes para essa consulta."
 
+    # Retorna uma lista compacta separada por vírgulas: 'Marca Modelo, Marca Modelo, ...'
+    entries = []
+    for carro in carros:
+        make = carro.get("make", "").strip()
+        model = carro.get("model", "").strip()
+        combined = f"{make} {model}".strip()
+        if combined:
+            entries.append(combined)
+
+    if not entries:
+        return ""
+
+    # adiciona instrução curta no final
+    return ", ".join(entries) + ". Se quiser detalhes de algum modelo, diga o nome exato (ex: 'Quero o Kia Sorento')."
+
+
+def formatar_detalhes_carro_carfit(carro: dict) -> str:
+    """Formata uma resposta curta e limpa com todos os detalhes de um único carro."""
+    if not carro:
+        return "Informações do carro não encontradas."
+
+    make = carro.get("make", "").strip()
+    model = carro.get("model", "").strip()
+    segment = carro.get("segment")
+    price = carro.get("price")
+    fuel = carro.get("fuel_type")
+    seats = carro.get("seats")
+    km_per_l = carro.get("km_per_l")
+    safety = carro.get("safety_score")
+    maintenance = carro.get("maintenance_monthly_est")
     combustivel_map = {
-        "gas":      "Gasolina",
-        "diesel":   "Diesel",
-        "hybrid":   "Híbrido",
+        "gas": "Gasolina",
+        "diesel": "Diesel",
+        "hybrid": "Híbrido",
         "electric": "Elétrico",
-        "flex":     "Flex",
+        "flex": "Flex",
     }
 
-    linhas = ["🚗 Opções encontradas no CarFitAI:\n"]
+    # tradução de segmentos comuns para PT-BR
+    segment_map = {
+        "7-seater": "7 lugares",
+        "7 seater": "7 lugares",
+        "mini": "Mini",
+        "sedan": "Sedã",
+        "crossover": "Crossover",
+        "suv": "SUV",
+        "hatch": "Hatch",
+        "compact": "Compacto",
+        "coupe": "Cupê",
+    }
 
-    for i, carro in enumerate(carros, start=1):
-        make        = carro.get("make", "")
-        model       = carro.get("model", "")
-        segment     = carro.get("segment", "")
-        price       = carro.get("price")
-        fuel        = carro.get("fuel_type", "")
-        seats       = carro.get("seats")
-        km_per_l    = carro.get("km_per_l")
-        safety      = carro.get("safety_score")
-        maintenance = carro.get("maintenance_monthly_est")
+    # Cabeçalho
+    cabecalho = f"{make} {model}".strip()
+    linhas = [cabecalho, "" ]
 
-        linhas.append(f"{i}. {make} {model}".strip())
+    # Preparar pares rótulo->valor e traduzir/formatar valores
+    campos = []
+    if price:
+        campos.append(("Preço", f"R$ {price:,.0f}".replace(",", ".")))
+    if fuel:
+        campos.append(("Combustível", combustivel_map.get(fuel, fuel).capitalize()))
+    if seats:
+        campos.append(("Lugares", str(seats)))
+    if km_per_l:
+        try:
+            campos.append(("Eficiência", f"{km_per_l:.1f} km/l"))
+        except Exception:
+            campos.append(("Eficiência", str(km_per_l)))
+    if safety:
+        campos.append(("Segurança", f"{safety:.1f}/5.0"))
+    if maintenance:
+        campos.append(("Manutenção estimada", f"R$ {maintenance}/mês"))
 
-        if segment:
-            linhas.append(f"   Segmento: {segment}")
+    # formatar com vírgulas entre os campos
+    if campos:
+        campos_str = ", ".join(f"{lbl}: {val}" for lbl, val in campos)
+        linhas.append(campos_str)
 
-        if price:
-            linhas.append(f"   Preço: R$ {price:,.0f}".replace(",", "."))
+    linhas.append("")
+    linhas.append("Se quiser, posso te mostrar modelos parecidos com esse.")
 
-        combustivel = combustivel_map.get(fuel, fuel)
-        if combustivel:
-            linhas.append(f"   Combustível: {combustivel}")
-
-        if seats:
-            linhas.append(f"   Lugares: {seats}")
-
-        if km_per_l:
-            linhas.append(f"   Eficiência: {km_per_l:.1f} km/l")
-
-        if safety:
-            linhas.append(f"   Segurança: {safety:.1f}/5.0")
-
-        if maintenance:
-            linhas.append(f"   Manutenção estimada: R$ {maintenance}/mês")
-
-        linhas.append("")
-
-    return "\n".join(linhas).strip()
+    return "\n".join(linhas)
