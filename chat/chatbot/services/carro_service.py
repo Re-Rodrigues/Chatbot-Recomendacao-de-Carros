@@ -42,7 +42,7 @@ def responder_marca(texto, contexto):
             else:
                 pool = carros_marca
 
-            selected = pool[: min(4, len(pool))]
+            selected = random.sample(pool, min(4, len(pool)))
             carros_info = ", ".join(
                 f"{c.upper()} ({DADOS_CARROS[c]['ano']})"
                 for c in selected
