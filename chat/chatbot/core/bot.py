@@ -29,8 +29,7 @@ def responder(texto):
     if resposta_carro:
         return resposta_carro
 
-    # Se não foi encontrado localmente por modelo, verificar se o usuário mencionou
-    # um modelo que existe no dataset CarFit e retornar detalhes somente nesse caso.
+    
     carros_carfit_match = buscar_no_carfit(texto)
     if carros_carfit_match:
         texto_lower = texto.lower()
@@ -38,15 +37,13 @@ def responder(texto):
             modelo = (carro.get("model") or "").lower()
             marca = (carro.get("make") or "").lower()
 
-            # Priorizar correspondência por modelo: verificar se alguma palavra do modelo
-            # aparece no texto do usuário (ex: 'sorento' em 'kia sorento').
-            # Evitar tokens genéricos de sufixo que causam falsos positivos (ex: "base", "plus").
+            
             STOP_MODEL_TOKENS = {"base", "limited", "plus", "urban", "sport", "edition", "premium", "lx", "ex", "se", "gt"}
             modelo_tokens = [t for t in modelo.split() if len(t) >= 3 and t not in STOP_MODEL_TOKENS]
             if modelo_tokens and any(token in texto_lower for token in modelo_tokens):
                 return formatar_detalhes_carro_carfit(carro)
 
-            # Também verificar a frase completa 'marca modelo' no texto.
+            
             if marca and modelo and f"{marca} {modelo}" in texto_lower:
                 return formatar_detalhes_carro_carfit(carro)
 
@@ -65,8 +62,7 @@ def responder(texto):
         contexto.reset(intencao)
 
     if intencao == "tipo_eletrico":
-        # Se o usuário pediu "outros" e já temos estado de paginação, usar offset
-        # Use stored CarFit query when user asks for more options
+        
         if pedir_outros(texto) and contexto.ultima_intencao == "tipo_eletrico":
             offset = contexto.carfit_offset
             exclude = contexto.carfit_previous_ids
@@ -76,13 +72,13 @@ def responder(texto):
             exclude = []
             query = texto
 
-        # persist the current CarFit query for subsequent 'mais' requests
+        
         if offset == 0:
             contexto.carfit_query = query
 
         carros_carfit = buscar_no_carfit(query, offset=offset, exclude_ids=exclude)
         if carros_carfit:
-            # atualizar contexto de paginação
+            
             for c in carros_carfit:
                 cid = c.get("car_id")
                 if cid and cid not in contexto.carfit_previous_ids:
@@ -90,7 +86,7 @@ def responder(texto):
             contexto.carfit_offset += len(carros_carfit)
             return formatar_resposta_carfit(carros_carfit)
 
-        # fallback para LLM se não houver resultados
+        
         resposta_llm = gerar_resposta_llm(texto)
         if resposta_llm:
             return f"{resposta_llm}\n\n(uma API foi usada nesta pesquisa)"
@@ -105,7 +101,7 @@ def responder(texto):
 
         selected = random.sample(pool, min(3, len(pool)))
         
-        # Formatar com títulos e lista de carros
+        
         titulos = {
             "preco": "Carros bons e baratos",
             "economia": "Carros econômicos",
@@ -119,7 +115,7 @@ def responder(texto):
         
         titulo = titulos.get(intencao, "Carros recomendados")
         
-        # Formatar lista de carros com travessão
+        
         lista_carros = "\n".join(
             f"-{c.upper()} ({DADOS_CARROS[c]['marca']})"
             for c in selected
