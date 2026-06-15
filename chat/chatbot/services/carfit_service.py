@@ -1,4 +1,5 @@
 import os
+import random
 import requests
 import logging
 import re
@@ -121,12 +122,13 @@ def buscar_no_carfit(pergunta: str, offset: int = 0, exclude_ids: list | None = 
         if car_id and car_id in exclude_ids:
             continue
         if _carro_bate_filtros(carro, palavras_chave):
-            # anexe o id internamente para controle de paginação
+            
             if car_id:
                 carro["car_id"] = car_id
             carros_filtrados.append(carro)
-        if len(carros_filtrados) >= MAX_RESULTADOS:
-            break
+
+    random.shuffle(carros_filtrados)
+    carros_filtrados = carros_filtrados[:MAX_RESULTADOS]
 
     logger.info(
         "[CarFitAI] %d carro(s) encontrado(s) para: '%s'",
@@ -140,7 +142,7 @@ def formatar_resposta_carfit(carros: list) -> str:
     if not carros:
         return "Não encontrei carros correspondentes para essa consulta."
 
-    # Retorna uma lista compacta separada por vírgulas: 'Marca Modelo, Marca Modelo, ...'
+    
     entries = []
     for carro in carros:
         make = carro.get("make", "").strip()
@@ -152,7 +154,7 @@ def formatar_resposta_carfit(carros: list) -> str:
     if not entries:
         return ""
 
-    # adiciona instrução curta no final
+    
     return ", ".join(entries) + ". Se quiser detalhes de algum modelo, diga o nome exato (ex: 'Quero o Kia Sorento')."
 
 
@@ -178,7 +180,7 @@ def formatar_detalhes_carro_carfit(carro: dict) -> str:
         "flex": "Flex",
     }
 
-    # tradução de segmentos comuns para PT-BR
+    
     segment_map = {
         "7-seater": "7 lugares",
         "7 seater": "7 lugares",
@@ -191,11 +193,11 @@ def formatar_detalhes_carro_carfit(carro: dict) -> str:
         "coupe": "Cupê",
     }
 
-    # Cabeçalho
+    
     cabecalho = f"{make} {model}".strip()
     linhas = [cabecalho, "" ]
 
-    # Preparar pares rótulo->valor e traduzir/formatar valores
+    
     campos = []
     if price:
         campos.append(("Preço", f"R$ {price:,.0f}".replace(",", ".")))
