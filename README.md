@@ -16,11 +16,10 @@
 
 ## Como executar
 
+```bash
 winget install Python.Python.3.11
 py -3.11 -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 python -c "import nltk; nltk.download('punkt'); nltk.download('wordnet')"
 python chat/app.py
-
----
