@@ -10,7 +10,8 @@ from ..services.carro_service import (
     responder_carro,
     pedir_outros,
     frase_recomendacao,
-    gancho
+    gancho,
+    gancho_carro
 )
 from ..services.carfit_service import (
     buscar_no_carfit,
@@ -101,35 +102,31 @@ def responder(texto):
 
         selected = random.sample(pool, min(3, len(pool)))
         
-        
-        titulos = {
-            "preco": "Carros bons e baratos",
-            "economia": "Carros econômicos",
-            "potencia": "Carros com potência",
-            "tipo_suv": "SUVs recomendados",
-            "tipo_sedan": "Sedans recomendados",
-            "tipo_hatch": "Hatches recomendados",
-            "completo": "Carros completos",
-            "tipo_eletrico": "Carros elétricos",
-        }
-        
-        titulo = titulos.get(intencao, "Carros recomendados")
-        
-        
-        lista_carros = "\n".join(
-            f"-{c.upper()} ({DADOS_CARROS[c]['marca']})"
+        # Formatar a lista de carros
+        lista_carros = ", ".join(
+            f"{c.upper()} ({DADOS_CARROS[c]['marca']})"
             for c in selected
         )
         
-        resp = f"{titulo}:\n\n{lista_carros}\n\nGostou desses carros?"
+        # Usar frase_recomendacao para intencoes com gancho melhor
+        if intencao in ["preco", "economia", "potencia", "tipo_suv", "tipo_sedan", "tipo_hatch", "completo"]:
+            resp = frase_recomendacao(intencao, lista_carros) + gancho()
+        else:
+            # Para outros tipos, usar formato padrão
+            titulos = {
+                "tipo_eletrico": "Carros elétricos",
+            }
+            titulo = titulos.get(intencao, "Carros recomendados")
+            resp = f"{titulo}:\n\n{lista_carros}\n\nGostou desses carros?"
         
         contexto.carros = selected
         contexto.previous_carros = selected
     else:
         contexto.carros = []
 
-    if intencao not in ["despedida", "saudacao", "nao_entendi", "sobre", "opcoes", "agradecimento", "preco", "tipo_suv", "tipo_sedan", "tipo_hatch", "economia", "potencia", "completo", "tipo_eletrico"]:
-        resp += " " + gancho()
+    if intencao not in ["despedida", "saudacao", "nao_entendi", "sobre", "opcoes", "agradecimento"]:
+        if intencao not in ["preco", "tipo_suv", "tipo_sedan", "tipo_hatch", "economia", "potencia", "completo", "tipo_eletrico"]:
+            resp += "\n\n" + gancho()
 
     if intencao == "nao_entendi":
         carros_carfit = buscar_no_carfit(texto)
