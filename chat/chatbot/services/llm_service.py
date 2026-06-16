@@ -23,12 +23,15 @@ def _build_headers() -> dict:
 def gerar_resposta_llm(pergunta: str) -> str:
     if not HF_TOKEN:
         logger.warning("[LLM] HF_TOKEN não definido.")
-        return None
+        return ""
 
     prompt = (
-        "Você é um assistente especializado em recomendação de carros. "
-        "Responda de forma clara e útil à pergunta do usuário, mantendo o foco em carros e recomendações práticas.\n\n"
+        "Você é um assistente virtual inteligente e simpático. "
+        "Responda SEMPRE em português do Brasil de forma clara e útil. "
+        "Quando a pergunta for sobre carros, foque em recomendações práticas. "
+        "Para outros assuntos, responda com seu conhecimento geral.\n\n"
         f"Pergunta: {pergunta}\n"
+        "Resposta:"
     )
 
     payload = {

@@ -8,6 +8,26 @@ X = vectorizer.fit_transform([preprocess(f) for f in FRAMES])
 modelo = MultinomialNB()
 modelo.fit(X, INTENCOES)
 
+PALAVRAS_CARRO = {
+    "carro", "carros", "veiculo", "veiculos", "automovel", "automoveis",
+    "modelo", "modelos", "marca", "marcas", "motor", "cambio", "potencia",
+    "consumo", "preco", "barato", "economico", "suv", "sedan", "hatch",
+    "eletrico", "hibrido", "pickup", "minivan", "utilitario", "completo",
+    "recomend", "opcoes", "opcao", "tipo", "tipos", "comprar", "escolher",
+    "qual", "quais", "melhor", "bom", "boa", "indica", "indique", "sugere",
+    "toyota", "honda", "ford", "chevrolet", "volkswagen", "fiat", "nissan",
+    "hyundai", "kia", "renault", "peugeot", "jeep", "bmw", "mercedes",
+    "audi", "volvo", "mitsubishi", "subaru", "mazda", "suzuki",
+}
+
+
+def _tem_contexto_carro(texto: str) -> bool:
+    tokens = texto.lower().split()
+    return any(
+        any(token.startswith(palavra) for palavra in PALAVRAS_CARRO)
+        for token in tokens
+    )
+
 
 def detectar_intencao(texto):
     texto = normalizar(texto)
@@ -41,6 +61,9 @@ def detectar_intencao(texto):
         return "opcoes"
     if any(word in texto for word in ["obrigado", "obrigada", "valeu", "brigado", "brigad"]):
         return "agradecimento"
+
+    if not _tem_contexto_carro(texto):
+        return "nao_entendi"
 
     v = vectorizer.transform([preprocess(texto)])
     if v.nnz == 0:
